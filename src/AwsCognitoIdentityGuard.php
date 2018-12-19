@@ -809,7 +809,7 @@ class AwsCognitoIdentityGuard implements StatefulGuard
     protected function fireFailedEvent($user, array $credentials)
     {
         if (isset($this->events)) {
-            $this->events->dispatch(new Failed($this->guard, $user, $credentials));
+            $this->events->dispatch(new Failed($this->name, $user, $credentials));
         }
     }
 
